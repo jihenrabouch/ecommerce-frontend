@@ -1,27 +1,51 @@
-# EcommerceFrontend
+🛍️ E-commerce Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 14.0.7.
+Ce projet est le **frontend** d’une application e-commerce.  
+Il est développé avec **Angular** et communique avec le backend Spring Boot via API REST.
 
-## Development server
+ 🚀 Technologies utilisées
+- Angular 16+
+- TypeScript
+- HTML / CSS / Bootstrap
+- Angular Router
+- HttpClient (pour consommer l’API)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+ 📂 Structure du projet
+- `src/app/components` → Composants Angular
+- `src/app/services` → Services pour appeler l’API
+- `src/environments` → Configuration d’API
+- `angular.json` → Configuration Angular
 
-## Code scaffolding
+ ⚙️ Installation & exécution
+1. **Cloner le dépôt**
+   ```bash
+   git clone https://github.com/jihenrabouch/ecommerce-frontend.git
+   cd ecommerce-frontend
+Installer les dépendances
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+bash
+Copier le code
+npm install
+Configurer l’URL de l’API backend
+Dans src/environments/environment.ts :
 
-## Build
+typescript
+Copier le code
+export const environment = {
+  production: false,
+  apiUrl: 'http://localhost:8081/api'
+};
+Lancer l’application
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+bash
+Copier le code
+ng serve
+Puis ouvrir http://localhost:4200
 
-## Running unit tests
+🔗 Lien associé
+Backend : https://github.com/jihenrabouch/ecommerce-api
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+👩‍💻 Développé par Jihen Rabouch
 
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+yaml
+Copier le code
