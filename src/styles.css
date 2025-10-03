@@ -1,1 +1,226 @@
-/* You can add global styles to this file, and also import other style files */
+/* ===================== GLOBAL ===================== */
+body {
+  font-family: "Inter", "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f5f7fa;
+  color: #2c3e50;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* Dark mode */
+.dark-mode {
+  background: #121212;
+  color: #e0e0e0;
+}
+
+/* ===================== NAVBAR ===================== */
+.navbar {
+  border-radius: 14px;
+  padding: 14px 22px;
+  background: #fff !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  transition: background 0.3s;
+}
+.dark-mode .navbar {
+  background: #1f1f1f !important;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Brand */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 1.4rem;
+  letter-spacing: -0.5px;
+  color: #2c3e50 !important;
+  transition: color 0.3s;
+}
+.dark-mode .navbar-brand {
+  color: #f5f5f5 !important;
+}
+
+/* Nav links */
+.nav-link {
+  font-weight: 500;
+  margin-left: 18px;
+  border-radius: 10px;
+  padding: 10px 16px !important;
+  transition: background 0.25s, color 0.25s;
+}
+.nav-link:hover {
+  background: #0d6efd;
+  color: #fff !important;
+}
+.nav-link.active {
+  background: #0d6efd;
+  color: #fff !important;
+}
+.dark-mode .nav-link {
+  color: #d1d1d1 !important;
+}
+.dark-mode .nav-link:hover {
+  background: #0d6efd;
+  color: #fff !important;
+}
+
+/* ===================== TABLEAU PRODUITS ===================== */
+.table {
+  border-radius: 14px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+.table th {
+  background: #f9fafb;
+  font-weight: 600;
+  color: #495057;
+  padding: 14px;
+}
+.table td {
+  padding: 12px;
+  vertical-align: middle;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+  background-color: #f8f9fa;
+}
+.table-striped tbody tr:hover {
+  background-color: #eef4ff;
+}
+.dark-mode .table {
+  background: #1e1e1e;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.4);
+}
+.dark-mode .table th {
+  background: #2a2a2a;
+  color: #e0e0e0;
+}
+.dark-mode .table-striped tbody tr:nth-of-type(odd) {
+  background-color: #2b2b2b;
+}
+.dark-mode .table-striped tbody tr:hover {
+  background-color: #2f3e57;
+}
+
+/* Images produits */
+.img-thumbnail {
+  border-radius: 10px;
+  border: none;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+/* ===================== FORMULAIRE PRODUIT ===================== */
+form {
+  background: #fff;
+  padding: 28px;
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  max-width: 750px;
+  margin: 25px auto;
+  transition: background 0.3s;
+}
+.dark-mode form {
+  background: #1e1e1e;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+/* Labels */
+.form-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+  display: inline-block;
+  color: #34495e;
+}
+.dark-mode .form-label {
+  color: #e0e0e0;
+}
+
+/* Inputs & Textareas */
+.form-control {
+  border-radius: 10px;
+  padding: 12px;
+  border: 1px solid #d1d9e0;
+  background: #fafafa;
+  transition: border-color 0.3s, background 0.3s;
+}
+.form-control:focus {
+  border-color: #0d6efd;
+  background: #fff;
+  box-shadow: 0 0 0 4px rgba(13,110,253,0.15);
+}
+.dark-mode .form-control {
+  background: #2a2a2a;
+  border: 1px solid #444;
+  color: #f1f1f1;
+}
+.dark-mode .form-control:focus {
+  border-color: #0d6efd;
+  background: #333;
+  box-shadow: 0 0 0 4px rgba(13,110,253,0.3);
+}
+
+/* ===================== BOUTONS ===================== */
+button, .btn {
+  border-radius: 10px !important;
+  padding: 10px 18px !important;
+  font-weight: 500 !important;
+  transition: all 0.25s ease-in-out;
+}
+.btn-primary {
+  background: #0d6efd;
+  border: none;
+}
+.btn-primary:hover {
+  background: #0b5ed7;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(13,110,253,0.3);
+}
+.btn-warning {
+  background: #f39c12;
+  border: none;
+  color: #fff;
+}
+.btn-danger {
+  background: #e74c3c;
+  border: none;
+  color: #fff;
+}
+.btn-secondary {
+  background: #6c757d;
+  border: none;
+  color: #fff;
+}
+.btn-secondary:hover {
+  background: #5a6268;
+}
+
+/* ===================== TOGGLE DARK MODE ===================== */
+.toggle-dark {
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  margin-left: auto;
+  transition: transform 0.3s;
+}
+.toggle-dark:hover {
+  transform: rotate(20deg);
+}
+/* Dans votre fichier styles.css ou component CSS */
+.image-error {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #6c757d;
+  font-size: 12px;
+}
+
+.product-image {
+  object-fit: cover;
+  transition: opacity 0.3s ease;
+}
+
+.product-image.image-error::before {
+  content: "❌ Image";
+  display: block;
+  text-align: center;
+}

@@ -1,0 +1,67 @@
+<form [formGroup]="productForm" (ngSubmit)="onSubmit()" class="product-form">
+
+  <!-- Product Name -->
+  <div class="form-group">
+    <label class="form-label">Product Name*</label>
+    <input type="text" class="form-control" formControlName="name">
+    <div *ngIf="productForm.get('name')?.invalid && productForm.get('name')?.touched" class="error-text">
+      Name is required
+    </div>
+  </div>
+
+  <!-- Description -->
+  <div class="form-group">
+    <label class="form-label">Description</label>
+    <textarea class="form-control" formControlName="description" rows="3"></textarea>
+  </div>
+
+  <!-- Price & Quantity in flex row -->
+  <div class="form-row">
+    <div class="form-group flex-col">
+      <label class="form-label">Price*</label>
+      <input type="number" step="0.01" class="form-control" formControlName="price">
+    </div>
+    <div class="form-group flex-col">
+      <label class="form-label">Quantity*</label>
+      <input type="number" class="form-control" formControlName="quantity">
+    </div>
+  </div>
+
+  <!-- Category -->
+  <div class="form-group">
+    <label class="form-label">Category*</label>
+    <select class="form-control" formControlName="category">
+      <option value="">-- Select Category --</option>
+      <option *ngFor="let cat of categories" [value]="cat.id">{{ cat.name }}</option>
+    </select>
+  </div>
+
+  <!-- Image upload -->
+  <div class="form-group">
+    <label class="form-label">Product Image</label>
+    <input type="file" class="form-control" (change)="onFileSelected($event)">
+    
+    <div class="upload-flex">
+      <button type="button" class="btn btn-secondary" (click)="onUpload()" [disabled]="!selectedFile">
+        Upload
+      </button>
+      <p *ngIf="uploadMessage" class="success-text">{{ uploadMessage }}</p>
+    </div>
+
+    <small class="text-muted">Or enter an image URL below</small>
+  </div>
+
+  <!-- Image URL -->
+  <div class="form-group" *ngIf="!selectedFile">
+    <label class="form-label">Image URL</label>
+    <input type="url" class="form-control" formControlName="imageUrl">
+  </div>
+
+  <!-- Submit button -->
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">
+      💾 Save Product
+    </button>
+  </div>
+
+</form>

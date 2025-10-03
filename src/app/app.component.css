@@ -1,0 +1,58 @@
+/* Container principal */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+/* Navbar */
+.navbar {
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 12px 20px;
+}
+
+/* Brand */
+.navbar-brand {
+  font-weight: 700;
+  font-size: 30px;
+  color: #2c3e50 !important;
+  transition: color 0.2s ease-in-out;
+  text-decoration: none;
+}
+.navbar-brand:hover {
+  color: #007bff !important;
+}
+
+/* Nav links */
+.nav-link {
+  font-weight: 700;
+  font-size: 24px;
+  color: #495057 !important;
+  margin-left: 120px;
+  border-radius: 6px;
+  padding: 8px 12px !important;
+  transition: background 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+.nav-link:hover {
+  background: #007bff;
+  color: #fff !important;
+}
+
+/* Active link (optionnel si tu utilises routerLinkActive) */
+.nav-link.active {
+  background: #007bff;
+  color: #fff !important;
+}
+
+/* Pour que le contenu soit bien espacé sous la navbar */
+router-outlet {
+  display: block;
+  margin-top: 20px;
+}
+.container-fluid{
+  display: flex;
+  justify-content: start  ;
+  align-items: center;
+  padding: 10px 15px;
+}

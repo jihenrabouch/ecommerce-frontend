@@ -1,0 +1,64 @@
+<div class="product-container mt-4">
+  <div class="header-flex">
+    <h2 class="title">Product List</h2>
+    <a routerLink="/products/new" class="btn btn-primary add-btn">+ Add Product</a>
+  </div>
+
+  <!-- Filter row -->
+  <div class="filter-flex mb-3">
+    <label for="categoryFilter" class="form-label me-2">Filter by Category:</label>
+    <select id="categoryFilter" class="form-select filter-select"
+            [(ngModel)]="selectedCategory"
+            (change)="filterByCategory()">
+      <option [ngValue]="null">All Categories</option>
+      <option *ngFor="let category of categories" [ngValue]="category.id">
+        {{ category.name }}
+      </option>
+    </select>
+  </div>
+
+  <!-- Table -->
+  <div class="table-responsive" *ngIf="products.length > 0; else noProducts">
+    <table class="table table-striped product-table">
+      <thead>
+        <tr>
+          <th>Image</th>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Description</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Category</th>
+          <th class="text-center">Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>
+            <img [src]="getImageSrc(product)" 
+                 [alt]="product.name"
+                 class="img-thumbnail product-img"
+                 (error)="onImageError($event)" />
+          </td>
+          <td>{{ product.id }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.description }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.quantity }}</td>
+          <td>{{ product.category.name }}</td>
+          <td>
+            <div class="action-flex">
+              <a [routerLink]="['/products/edit', product.id]" class="btn btn-sm btn-warning">Edit</a>
+              <button (click)="deleteProduct(product.id!)" class="btn btn-sm btn-danger">Delete</button>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Empty state -->
+  <ng-template #noProducts>
+    <div class="alert alert-info">No products found.</div>
+  </ng-template>
+</div>
